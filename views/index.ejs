@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('header') -%>
+<%- include('menubar') -%>
+    <div class="jumbotron">
+        <h1>Welcome to Calorie Track</h1>
+        <p>Your daily record of calorie intake & consumption</p>
+    </div>
+    <ul>
+      <li><a href="/calculator">How many calories will I consume everyday?</a></li>
+
+    </ul>
+<%- include('footer') -%>

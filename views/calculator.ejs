@@ -1,0 +1,23 @@
+<%- include('header') -%>
+<%- include('menubar') -%>
+    <div class="jumbotron">
+        <h1>Please input your information below</h1>
+    </div>
+
+    <form method="post" action="/processform">
+      Age: <input type="text" name="url"> <br>
+      Height (in cm): <input type="text" name="theComments"> <br>
+
+
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Gender:</label>
+        <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-warning">Submit</button>
+    </form>
+
+<%- include('footer') -%>
