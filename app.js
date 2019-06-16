@@ -4,6 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+// skillsRouter = require('./routes/skills'),
+const mongoose = require( 'mongoose' );
+mongoose.connect( 'mongodb://localhost/mydb' );
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("we are connected!")
+});
+
+
+const  commentController = require('./controllers/commentController.js')
+
 var app = express();
 
 // view engine setup
@@ -45,8 +58,9 @@ function processFormData(req,res,next){
      {title:"result",url:req.body.url, coms:req.body.theComments});
 }
 
-app.post('/processform', processFormData);
+app.post('/processform', commentController.saveComment);
 
+app.get('/showComments', commentController.getAllComment)
 // app.use('/', indexRouter);  // this is how we use a router to handle the / path
 // but here we are more direct
 

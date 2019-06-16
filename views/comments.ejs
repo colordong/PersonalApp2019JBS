@@ -1,0 +1,18 @@
+<%- include('header') -%>
+<%- include('menubar') -%>
+  <div class="jumbotron">
+    <h1>Here is the result</h1>
+  </div>
+
+  <ol>
+    <% for(i = 0; i<comments.length; i++){  %>
+        <li>
+              <%= comments[i].name %><br>
+             <%= comments[i].age %><br>
+             <%= comments[i].height %><br>
+             <%= comments[i].weight %>
+            </li>
+    <% } %>
+    </ol>
+
+<%- include('footer') -%>
