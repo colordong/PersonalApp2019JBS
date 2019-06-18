@@ -18,7 +18,12 @@
         </select>
       </div>
 
+      <% if (loggedIn) { %>
       <button type="submit" class="btn btn-warning">Submit</button>
+      <% } else { %>
+        You must be logged in to submit form info.
+        <% } %>
+
     </form>
 
 <%- include('footer') -%>

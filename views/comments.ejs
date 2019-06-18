@@ -6,8 +6,8 @@
 
   <ol>
     <% for(i = 0; i<comments.length; i++){  %>
-        <li>
-              <%= comments[i].name %><br>
+      <li> <a href="/showComment/<%= comments[i]._id %>">
+              <%= comments[i].name %></a> <br>
              <%= comments[i].age %><br>
              <%= comments[i].height %><br>
              <%= comments[i].weight %>

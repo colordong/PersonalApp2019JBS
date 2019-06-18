@@ -43,3 +43,25 @@ exports.getAllComment = ( req, res ) => {
       //console.log( 'skill promise complete' );
     } );
 };
+
+
+ // this displays all of the skills
+exports.getOneComment = ( req, res ) => {
+  //gconsle.log('in getAllSkills')
+  const id = req.params.id
+  console.log('the id is '+id)
+  Comment.findOne({_id:id})
+    .exec()
+    .then( ( comment ) => {
+      res.render( 'comment', {
+        comment:comment, title:"Comment"
+      } );
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
