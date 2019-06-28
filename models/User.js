@@ -10,8 +10,13 @@ const Schema = mongoose.Schema;
   googlename:String,
   googleemail:String,
   description: String,
-  classIds:[Schema.Types.ObjectId],
-  classCodes:[String],
+  profilePicURL: String,
+  bio: String,
+  lastUpdate: Date,
+  userName: String,
+  zipcode: String,
+  city: String,
+  state: String
 } );
 
  module.exports = mongoose.model( 'User', userSchema );

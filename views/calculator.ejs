@@ -6,9 +6,9 @@
 
     <form method="post" action="/processform">
       Name: <input type="text" name="name"> <br>
-      Age: <input type="text" name="age"> <br>
-      Height (in cm): <input type="text" name="height"> <br>
-      Weight (in kg): <input type="text" name="weight">
+      Age: <input type="text" name="age" id="age"> <br>
+      Height (in cm): <input type="text" name="height" id="height" value="cm"> <br>
+      Weight (in kg): <input type="text" name="weight" id="weight">
 
       <div class="form-group">
         <label for="exampleFormControlSelect1">Gender:</label>
@@ -25,5 +25,32 @@
         <% } %>
 
     </form>
+
+
+<hr>
+<h1> Calculate your BMR </h1>
+    <button onClick="calc()">I'm a girl</button>
+      <script>
+        function calc(){
+          var A = document.getElementById('age')
+          var H = document.getElementById('height')
+          var W = document.getElementById('weight')
+          var BMR = document.getElementById('BMR')
+
+          BMR.value = 665+(9.6*W.value)+(1.8*H.value)-(4.7*A.value)
+    }
+    </script>
+    <button onClick="calc()">I'm a boy</button>
+      <script>
+        function calc(){
+          var A = document.getElementById('age')
+          var H = document.getElementById('height')
+          var W = document.getElementById('weight')
+          var BMR = document.getElementById('BMR')
+
+          BMR.value = 66+(13.7*W.value)+(5*H.value)-(6.8*A.value)
+    }
+    </script>
+
 
 <%- include('footer') -%>
