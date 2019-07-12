@@ -1,0 +1,42 @@
+<%- include('header') -%>
+<%- include('menubar') -%>
+    <div class="jumbotron">
+        <h1>Recipes</h1>
+        <p>Share your recipes here! </p>
+    </div>
+
+    <form method="post" action="/recipes">
+      The name of the dish: <br>
+      <textarea id="post" name="post"></textarea><br>
+      The ingredients in the dish:<br>
+      <textarea id="ingredients" name="ingredients"></textarea><br>
+      Description of how to make the dish: <br>
+      <textarea id="description" name="description"></textarea>
+      <br>
+      <input type="submit">
+    </form>
+
+
+    <hr>
+    <form method="post" action="/recipesDelete">
+      <input type="submit" value="delete marked">
+      <ol>
+          <% for(i = 0; i < posts.length; i++){ %>
+              <li>
+                  <i>
+                   <%= posts[i].createdAt %></\/i> <br>
+                   <% console.dir([posts[i].userId,user._id]) %>
+                   <% if (posts[i].userId.equals(user._id)) { %>
+                       <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
+                   <% } %>
+                   <pre><%= posts[i].post %></pre>
+                   <pre><%= posts[i].ingredients %></pre>
+                   <pre><%= posts[i].description %></pre>
+
+               </li>
+        <% } %>
+      </ol>
+      </form>
+
+
+<%- include('footer') -%>

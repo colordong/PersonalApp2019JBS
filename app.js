@@ -27,6 +27,8 @@ db.once('open', function() {
 
 const  commentController = require('./controllers/commentController.js')
 const  profileController = require('./controllers/profileController.js')
+const  recipesPostController = require('./controllers/recipesPostController.js')
+
 
 // Authentication
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -173,6 +175,19 @@ app.post('/updateProfile',profileController.update)
     // add router for updateProfile and send browser to /profie
 
  // END OF THE AUTHENTICATION ROUTES
+
+
+//app.get('/recipes', function(req, res, next) {
+  //res.render('recipes',{title:"Recipes"});
+//});
+
+app.get('/recipes',recipesPostController.getAllRecipesPosts)
+
+app.post('/recipes',recipesPostController.saveRecipesPost)
+
+app.post('/recipesDelete',recipesPostController.deleteRecipesPost)
+
+
 
 app.use(function(req,res,next){
   console.log("about to look for routes!!!")
