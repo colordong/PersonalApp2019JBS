@@ -23,9 +23,8 @@
       <ol>
           <% for(i = 0; i < posts.length; i++){ %>
               <li>
-                  <i>
-                   <%= posts[i].createdAt %></\/i> <br>
-                   <% console.dir([posts[i].userId,user._id]) %>
+                  <i><%= posts[i].userId%></\/i> <br>
+                  <i><%= posts[i].createdAt %></\/i> <br>
                    <% if (posts[i].userId.equals(user._id)) { %>
                        <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
                    <% } %>
