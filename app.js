@@ -208,6 +208,11 @@ app.get('/calculator', function(req, res, next) {
   res.render('calculator',{title:"data"});
 });
 
+app.get('/consumption', function(req, res, next) {
+  res.render('consumption',{title:"YellowCartwheel"});
+});
+
+
 app.use(function(req,res,next){
   console.log("about to look for post routes!!!")
   next()

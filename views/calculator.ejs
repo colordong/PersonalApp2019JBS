@@ -25,31 +25,5 @@
         <% } %>
 
     </form>
-  
-    <hr>
-    <h1> Calculate your BMR </h1>
-        <button onClick="calc()">I'm a girl</button>
-          <script>
-            function calc(){
-              var A = document.getElementById('age')
-              var H = document.getElementById('height')
-              var W = document.getElementById('weight')
-              var BMR = document.getElementById('BMR')
-
-              BMR.value = 665+(9.6*W.value)+(1.8*H.value)-(4.7*A.value)
-        }
-        </script>
-        <button onClick="calc()">I'm a boy</button>
-          <script>
-            function calc(){
-              var A = document.getElementById('age')
-              var H = document.getElementById('height')
-              var W = document.getElementById('weight')
-              var BMR = document.getElementById('BMR')
-
-              BMR.value = 66+(13.7*W.value)+(5*H.value)-(6.8*A.value)
-        }
-        </script>
-
 
 <%- include('footer') -%>

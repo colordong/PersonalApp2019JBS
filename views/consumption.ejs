@@ -1,0 +1,54 @@
+<%- include('header') -%>
+<%- include('menubar') -%>
+    <div class="jumbotron">
+        <h1>BMR Calculator</h1>
+        <p>Get your rate of energy expenditure per unit time by endothermic animals at rest</p>
+    </div>
+
+    <br>
+    <hr>
+    <input type="text" id="height">Height in cm<br>
+    <input type="text" id="weight">Weight in kg<br>
+    <input type="text" id="age">Age in years<br>
+
+    <button onClick="com()" class="btn btn-sm btn-danger">I'm a girl</button><br>
+    <button onClick="calc()" class="btn btn-sm btn-primary">I'm a boy</button><br>
+    <br>
+    BMR = <label id="BMR">????</label><br>
+    <button onClick="reset()" class="btn btn-outline-info">Reset</button>
+
+
+
+    <script>
+      function com(){
+        var h = document.getElementById('height')
+        var w = document.getElementById('weight')
+        var a = document.getElementById('age')
+        var bmr = document.getElementById('BMR')
+
+        bmr.innerText = 655.1+(9.56*w.value)+(1.85*h.value)-(4.68*a.value)
+      }
+
+      function calc(){
+        var h = document.getElementById('height')
+        var w = document.getElementById('weight')
+        var a = document.getElementById('age')
+        var bmr = document.getElementById('BMR')
+
+        bmr.innerText = 66.47+(13.75*w.value)+(5*h.value)-(6.76*a.value)
+      }
+
+      function reset(){
+        var h = document.getElementById('height')
+        var w = document.getElementById('weight')
+        var a = document.getElementById('age')
+        var bmr = document.getElementById('BMR')
+        h.value=""
+        w.value=""
+        a.value=""
+        bmr.innerText = "????"
+      }
+    </script>
+
+
+<%- include('footer') -%>
